@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/tankesinicio.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* La imagen de fondo se ajustará y cubrirá todo el fondo */
+    font-family: Arial, sans-serif;
+}
+
+
+.contenedor {
+    text-align: center;
+    background-color: rgba(195, 168, 120, 0.8); /* Color de fondo más oscuro para el contenedor con transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    font-size: 36px;
+    color: #ffcc00; /* Color amarillo para el título */
+    margin: 10px 0;
+}
+
+.instrucciones {
+    font-size: 18px;
+    color: #fff; /* Texto blanco para las instrucciones */
+    margin: 10px 0;
+}
+
+.boton-iniciar {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 24px;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Animaciones de cambio de color de fondo y escalamiento */
+}
+
+.boton-iniciar:hover {
+    background-color: #ffdd33; /* Nuevo color de fondo al pasar el mouse */
+    transform: scale(1.5); /* Escalamiento del botón al pasar el mouse */
+}
