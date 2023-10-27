@@ -3,18 +3,3 @@ body {
     text-align: center;
     background-color: black;
 }
-
-.grid-container {
-    display: grid;
-    margin: 20px auto;
-    max-width: 40%;
-    grid-column-gap: 0;
-}
-
-.grid-item {
-    width: 100%;
-    padding-bottom: 100%;
-    background-color: #000;
-    border: 1px solid #444;
-    transition: background-color 1s;
-}
