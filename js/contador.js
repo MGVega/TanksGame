@@ -1,19 +1,22 @@
-import {contador} from './script.js';
 
 
-export function addContador(){
- 
-        let vidas1 = document.createElement("h2");
-        vidas1.id("j1")
-        vidas1.innerText("3")
-        contador.appendChild(vidas1);
 
-        let vidas2 = document.createElement("h2");
-        vidas2.id("j2")
-        vidas2.innerText("3")
-        contador.appendChild(vidas2);
-   
-    
+export function addContador(contador) {
+        let j1 = document.createElement("h1");
+        let j2 = document.createElement("h1");
+        let secondsElement = document.createElement("h1");
+      
+        j1.id = "j1"; // Establece el atributo 'id'
+        j2.id = "j2"; // Establece el atributo 'id'
+        secondsElement.id = "secondsElement"; // Establece el atributo 'id'
+      
+        j1.innerText = "3";
+        j2.innerHTML = "3";
+        secondsElement.innerHTML = "60";
+      
+        contador.appendChild(j1);
+        contador.appendChild(j2);
+        contador.appendChild(secondsElement);
 }
 
 export function perderVida(jugador){
@@ -31,8 +34,8 @@ let countdownInterval = setInterval(countdown, 1000);
 
 countdown();
 
-export function countdown() {
-  
+export function countdown(secondsElement) {
+
     currentDate = new Date();
     totalSeconds = 60000;
   

@@ -5,7 +5,7 @@ import { WIDTH, HEIGHT, FACTOR } from "../modules/constants.js";
 
 const body = document.body;
 const tablero = document.querySelector('#tablero');
-export const contador = document.getElementById('#contador');
+export const contador = document.getElementById('contador');
 
 //Tamaño del tablero de juego
 tablero.width = 800;
