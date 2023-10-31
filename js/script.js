@@ -14,8 +14,9 @@ tablero.height = 800;
 //Indicamos el contexto y tipo de tablero 2Dimensiones
 let context = tablero.getContext("2d");
 
+//El tanque de pruebas
 const playerPrueba = {
-  url: "../img/player.png",
+  url: "../img/tankie.png",
   x: (WIDTH / 2) - 50,
   y: HEIGHT - 150,
   speed: 15
@@ -30,8 +31,20 @@ function update() {
 
 //Renderizar el juego: Limpiamos el contexto (tablero), dibujamos a los jugadores(drawImage)
 function render() {
-    clearRect(context); //Limpia y pinta fondo negro
-    //drawImage(context, player); //Jugador 1
-    //drawImage(context, player); //Jugador 2
+  clearRect(context); //Limpia y pinta fondo negro
+  drawImage(context, playerPrueba); //Jugador 1
+  //drawImage(context, player); //Jugador 2
 
+}
+
+addEventListener("keydown", (event) => {
+  let isLeft = event.key === "ArrowLeft";
+  let isRight = event.key === "ArrowRight";
+
+  if (isLeft) {
+    player.x -= player.speed * FACTOR;
   }
+  if (isRight) {
+    player.x += player.speed * FACTOR;
+  }
+});
