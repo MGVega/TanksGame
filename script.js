@@ -38,15 +38,19 @@ addEventListener("keydown", (event) => {
 
   if (isLeft) {
     player.x -= player.speed * FACTOR;
+    player.url = "./images/1izquierda.png";
   }
   if (isRight) {
     player.x += player.speed * FACTOR;
+    player.url = "./images/1derecha.png";
   }
   if (isUp) {
     player.y -= player.speed * FACTOR;
+    player.url = "./images/1arriba.png";
   }
   if (isDown) {
     player.y += player.speed * FACTOR;
+    player.url = "./images/1abajo.png";
   }
 });
 
