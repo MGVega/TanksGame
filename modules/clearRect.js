@@ -6,6 +6,7 @@ export const clearRect = (ctx, x = 0, y = 0, w = WIDTH, h = HEIGHT) => {
   ctx.fillRect(x, y, w, h);
 };
 
+/*
 //MAPA
 // Obtener el elemento canvas y su contexto 2D
 const canvas = document.getElementById("gameCanvas");
@@ -69,3 +70,4 @@ distributeRotatedWalls();
 
 
 
+*/
