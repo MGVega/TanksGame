@@ -1,6 +1,8 @@
 //Imports
 import { drawImage } from "../modules/drawImage.js";
 import { clearRect } from "../modules/clearRect.js";
+import { Disparo } from "./bullet.js";
+import { setCustomProperty } from "./updateProperties.js";
 import { WIDTH, HEIGHT, FACTOR } from "../modules/constants.js";
 
 const body = document.body;
