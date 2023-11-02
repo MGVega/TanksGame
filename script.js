@@ -15,14 +15,14 @@ const player1 = {
   url: "./images/1arriba.png",
   x: (WIDTH / 2) - 50,
   y: HEIGHT - 150,
-  speed: 100
+  speed: 200
 };
 
 const player2 = {
   url: "./images/2arriba.png",
   x: (WIDTH / 2) - 100,
   y: HEIGHT - 150,
-  speed: 100
+  speed: 200
 };
 
 
