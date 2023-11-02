@@ -68,15 +68,19 @@ addEventListener("keydown", (event) => {
   
   if (isLeft2) {
     player2.x -= player2.speed * FACTOR;
+    player2.url = "./images/2izquierda.png";
   }
   if (isRight2) {
     player2.x += player2.speed * FACTOR;
+    player2.url = "./images/2derecha.png";
   }
   if (isUp2) {
     player2.y -= player2.speed * FACTOR;
+    player2.url = "./images/2arriba.png";
   }
   if (isDown2) {
     player2.y += player2.speed * FACTOR;
+    player2.url = "./images/2abajo.png";
   }
 });
 
