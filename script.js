@@ -12,14 +12,14 @@ let context = myCanvas.getContext("2d");
 // Ejemplo movimiento jugador
 
 const player1 = {
-  url: "./images/player.png",
+  url: "./images/1arriba.png",
   x: (WIDTH / 2) - 50,
   y: HEIGHT - 150,
   speed: 100
 };
 
 const player2 = {
-  url: "./images/player.png",
+  url: "./images/2arriba.png",
   x: (WIDTH / 2) - 100,
   y: HEIGHT - 150,
   speed: 100
@@ -51,15 +51,19 @@ addEventListener("keydown", (event) => {
 
   if (isLeft) {
     player1.x -= player1.speed * FACTOR;
+    player1.url = "./images/1izquierda.png";
   }
   if (isRight) {
     player1.x += player1.speed * FACTOR;
+    player1.url = "./images/1derecha.png";
   }
   if (isUp) {
     player1.y -= player1.speed * FACTOR;
+    player1.url = "./images/1arriba.png";
   }
   if (isDown) {
     player1.y += player1.speed * FACTOR;
+    player1.url = "./images/1abajo.png";
   }
   
   if (isLeft2) {
