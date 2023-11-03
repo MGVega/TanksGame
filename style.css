@@ -14,7 +14,8 @@ body{
 }
 
 #myCanvas{
-  border:1px solid #000000;
+  background-color: red;
+  border:1px solid red;
 }
 
 #contador{

@@ -78,8 +78,8 @@ body {
     bottom: 0;
     left: 0;
     border-radius: 5px;
-    width: 8px; /* Ancho del rayo láser */
-    height: 10%; /* Altura del rayo láser (desde abajo hacia arriba) */
+    width: 6px; /* Ancho del rayo láser */
+    height: 8%; /* Altura del rayo láser (desde abajo hacia arriba) */
     background: linear-gradient(to bottom, rgba(0, 224, 255, 0.6), transparent); /* Color y opacidad del láser */
     animation: disparar 4s linear forwards;
 }

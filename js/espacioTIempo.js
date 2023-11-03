@@ -1,9 +1,9 @@
 
-import { player1, player2 } from "../script.js";
 import { WIDTH, HEIGHT, FACTOR, X_IZQUIERDA, X_DERECHA, Y_ARRIBA, Y_ABAJO } from "../modules/constants.js";
+import { player1, player2, bala, balas } from "../script.js";
 
 export function espacioTiempo(event) {
-  console.log("test");
+  console.log("Tecla presionada: " + event.key);
   let isLeft = event.key === "ArrowLeft";
   let isRight = event.key === "ArrowRight";
   let isUp = event.key === "ArrowUp";
@@ -47,4 +47,15 @@ export function espacioTiempo(event) {
     player2.y += player2.speed * FACTOR;
     player2.url = "./images/2abajo.png";
   }
+
+    if ((event.key === "Control") && player1) {
+
+      const nuevaBala = {
+        x: player1.x + (player1.width / 2) - (bala.width / 2), 
+        y: player1.y,
+      };
+  
+      balas.push(nuevaBala); 
+    }
+  
 }
