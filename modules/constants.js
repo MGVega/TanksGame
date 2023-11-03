@@ -5,3 +5,7 @@ export const X_IZQUIERDA = 0;
 export const X_DERECHA = WIDTH;
 export const Y_ARRIBA = 0;
 export const Y_ABAJO = HEIGHT;
+
+export const wall1 = [
+    {x_from: WIDTH +100, x_to: WIDTH -100, size: 50}
+];
