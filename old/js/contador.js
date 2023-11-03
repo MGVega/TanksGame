@@ -1,6 +1,6 @@
 
 
-
+/*
 export function addContador(contador) {
         let j1 = document.createElement("h1");
         let j2 = document.createElement("h1");
@@ -10,15 +10,16 @@ export function addContador(contador) {
         j2.id = "j2"; // Establece el atributo 'id'
         secondsElement.id = "secondsElement"; // Establece el atributo 'id'
       
-        j1.innerText = "3";
+        j1.innerHTML = "3";
         j2.innerHTML = "3";
         secondsElement.innerHTML = "60";
       
         contador.appendChild(j1);
-        contador.appendChild(j2);
         contador.appendChild(secondsElement);
+        contador.appendChild(j2);
+        
 }
-
+*/
 export function perderVida(jugador){
         let vida = document.getElementById(jugador);
         
@@ -30,22 +31,11 @@ export function perderVida(jugador){
         contador.appendChild(vida);
 }
 
-let countdownInterval = setInterval(countdown, 1000);
 
-countdown();
+
+
 
 export function countdown(secondsElement) {
-
-    currentDate = new Date();
-    totalSeconds = 60000;
-  
-    // Condición para comprobar si ha llegado la hora establecida
-    if (Math.floor(totalSeconds) <= 0) {
-      showProduct();
-      secondsElement.innerHTML = 0;
-      return;
-    }
-
-    seconds = Math.floor(totalSeconds) % 60;
-    secondsElement.innerHTML = seconds;
+    let seconds = secondsElement.innerText - 1;
+    secondsElement.innerText = seconds;
 }

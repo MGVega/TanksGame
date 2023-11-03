@@ -1,6 +1,9 @@
 import { drawImage } from "./modules/drawImage.js";
 import { clearRect } from "./modules/clearRect.js";
 import { WIDTH, HEIGHT, FACTOR } from "./modules/constants.js";
+import {  countdown } from "./old/js/contador.js";
+
+let secondsElement = document.getElementById("secondsElement");
 
 const myCanvas = document.getElementById("myCanvas");
 myCanvas.width = WIDTH;
@@ -93,3 +96,6 @@ wallpaper.onload = function () {
 };
 
 
+let countdownInterval = setInterval(function() {
+  countdown(secondsElement);
+}, 1000);
