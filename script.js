@@ -12,16 +12,16 @@ let context = myCanvas.getContext("2d");
 // Ejemplo movimiento jugador
 
 const player1 = {
-  url: "./images/1arriba.png",
-  x: (WIDTH / 2) - 50,
-  y: HEIGHT - 150,
+  url: "./images/1abajo.png",
+  x: (WIDTH / 2) - (-210),
+  y: HEIGHT - 470,
   speed: 200
 };
 
 const player2 = {
   url: "./images/2arriba.png",
-  x: (WIDTH / 2) - 100,
-  y: HEIGHT - 150,
+  x: (WIDTH / 2) - 310,
+  y: HEIGHT - 110,
   speed: 200
 };
 
