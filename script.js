@@ -4,12 +4,12 @@ import { WIDTH, HEIGHT, FACTOR, X_IZQUIERDA, X_DERECHA, Y_ARRIBA, Y_ABAJO } from
 import { countdown } from "./js/contador.js";
 import { espacioTiempo } from "./js/espacioTIempo.js";
 
-// Define un array de líneas
+// Definido un array de líneas del canvas
 const lineas = [
   { x1: 150, y1: 100, x2: 150, y2: 200 }, // Línea arriba izquierda
   { x1: 500, y1: 100, x2: 500, y2: 200 }, // Línea arriba derecha
-  { x1: 150, y1: 380, x2: 150, y2: 280 }, // Línea abajo izquierda
-  { x1: 500, y1: 380, x2: 500, y2: 280 }, // Línea abajo derecha
+  { x1: 150, y1: 280, x2: 150, y2: 380 }, // Línea abajo izquierda
+  { x1: 500, y1: 280, x2: 500, y2: 380 }, // Línea abajo derecha
   { x1: 325, y1: 120, x2: 325, y2: 200 }, // T arriba (vertical)
   { x1: 250, y1: 200, x2: 400, y2: 200 }, // T arriba (horizontal)
   { x1: 325, y1: 280, x2: 325, y2: 360 }, // T abajo (vertical)
@@ -136,6 +136,7 @@ function render() {
   drawImage(context, player2);
 
   detectarColisiones();
+  detectarColisiones2();
 }
 
 function detectarColisiones() {
@@ -143,14 +144,38 @@ function detectarColisiones() {
     const bala = balas1[i];
     for (let j = 0; j < lineas.length; j++) {
       const linea = lineas[j];
+      const margen = 5; // Valor ficticio para aumentar el área de colisión
+
       if (
-        bala.x >= linea.x1 &&
-        bala.x <= linea.x2 &&
-        bala.y >= linea.y1 &&
-        bala.y <= linea.y2
+        bala.x + margen >= linea.x1 &&
+        bala.x - margen <= linea.x2 &&
+        bala.y + margen >= linea.y1 &&
+        bala.y - margen <= linea.y2
       ) {
         // Colisión detectada, elimina la bala
         balas1.splice(i, 1);
+        i--; // Ajusta el índice para la siguiente iteración
+        break; // Sal del bucle de líneas, ya que la bala ha colisionado
+      }
+    }
+  }
+}
+
+function detectarColisiones2() {
+  for (let i = 0; i < balas2.length; i++) {
+    const bala = balas2[i];
+    for (let j = 0; j < lineas.length; j++) {
+      const linea = lineas[j];
+      const margen = 5; // Valor ficticio para aumentar el área de colisión
+
+      if (
+        bala.x + margen >= linea.x1 &&
+        bala.x - margen <= linea.x2 &&
+        bala.y + margen >= linea.y1 &&
+        bala.y - margen <= linea.y2
+      ) {
+        // Colisión detectada, elimina la bala
+        balas2.splice(i, 1);
         i--; // Ajusta el índice para la siguiente iteración
         break; // Sal del bucle de líneas, ya que la bala ha colisionado
       }
