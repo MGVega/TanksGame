@@ -164,8 +164,8 @@ context.closePath();
 
 //linea abajo izquierda
 context.beginPath();
-context.moveTo(150, 400);
-context.lineTo(150, 300);
+context.moveTo(150, 380);
+context.lineTo(150, 280);
 context.strokeStyle = "blue";
 context.lineWidth = 2;
 context.stroke();
@@ -173,8 +173,8 @@ context.closePath();
 
 //linea abajo derecha
 context.beginPath();
-context.moveTo(500, 400);
-context.lineTo(500, 300);
+context.moveTo(500, 380);
+context.lineTo(500, 280);
 context.strokeStyle = "blue";
 context.lineWidth = 2;
 context.stroke();
@@ -182,7 +182,7 @@ context.closePath();
 
 //T arriba
 context.beginPath();
-context.moveTo(325, 100);
+context.moveTo(325, 120);
 context.lineTo(325, 200);
 context.strokeStyle = "blue";
 context.lineWidth = 2;
@@ -199,16 +199,16 @@ context.closePath();
 
 //T abajo
 context.beginPath();
-context.moveTo(325, 400);
-context.lineTo(325, 300);
+context.moveTo(325, 280);
+context.lineTo(325, 360);
 context.strokeStyle = "blue";
 context.lineWidth = 2;
 context.stroke();
 context.closePath();
 
 context.beginPath();
-context.moveTo(250, 300);
-context.lineTo(400, 300);
+context.moveTo(250, 280);
+context.lineTo(400, 280);
 context.strokeStyle = "blue";
 context.lineWidth = 2;
 context.stroke();
