@@ -1,7 +1,7 @@
 import { drawImage } from "./modules/drawImage.js";
 import { clearRect } from "./modules/clearRect.js";
 import { WIDTH, HEIGHT, FACTOR, X_IZQUIERDA, X_DERECHA, Y_ARRIBA, Y_ABAJO } from "./modules/constants.js";
-import { countdown } from "./js/contador.js";
+import { countdown, perderVida } from "./js/contador.js";
 import { espacioTiempo } from "./js/espacioTIempo.js";
 
 // Definido un array de líneas del canvas
@@ -17,7 +17,7 @@ const lineas = [
 ];
 
 let secondsElement = document.getElementById("secondsElement");
-
+let ganador = document.getElementById("ganador");
 const myCanvas = document.getElementById("myCanvas");
 myCanvas.width = WIDTH;
 myCanvas.height = HEIGHT;
@@ -158,6 +158,15 @@ function detectarColisiones() {
         break; // Sal del bucle de líneas, ya que la bala ha colisionado
       }
     }
+    if(bala.x >= player2.x &&
+      bala.x <= (player2.x + player2.width) &&
+      bala.y >= player2.y &&
+      bala.y <= player2.y + player2.width
+       ){
+        balas1.pop();
+        perderVida("j2", popup);
+        break;
+       }
   }
 }
 
@@ -180,6 +189,15 @@ function detectarColisiones2() {
         break; // Sal del bucle de líneas, ya que la bala ha colisionado
       }
     }
+    if(bala.x >= player1.x &&
+      bala.x <= (player1.x + player1.width) &&
+      bala.y >= player1.y &&
+      bala.y <= player1.y + player1.width
+       ){
+        balas2.pop();
+        perderVida("j1", popup);
+        break;
+       }
   }
 }
 
