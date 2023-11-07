@@ -14,7 +14,15 @@ export function espacioTiempo(event) {
   let isUp2 = event.key.toLowerCase() === "w";
   let isDown2 = event.key.toLowerCase() === "s";
 
-  if (isLeft && player1.x > X_IZQUIERDA) {
+  if (
+    !(
+        (isLeft && player1.x > 150 && player1.x < 250 && player1.y > 100 && player1.y < 200) ||
+        (isRight && player1.x > 500 && player1.x < 600 && player1.y > 100 && player1.y < 200) ||
+        (isUp && player1.x > 250 && player1.x < 400 && player1.y > 200 && player1.y < 300) ||
+        (isDown && player1.x > 150 && player1.x < 250 && player1.y > 300 && player1.y < 400)
+    ) 
+) {
+  if (isLeft && player1.x > X_IZQUIERDA ) {
     player1.direccion= "l";
     player1.x -= player1.speed * FACTOR;
     player1.url = "./images/1izquierda.png";
@@ -55,7 +63,7 @@ export function espacioTiempo(event) {
     player2.y += player2.speed * FACTOR;
     player2.url = "./images/2abajo.png";
   }
-
+}
     if ((event.key === "Control") && player1) {
 
       const nuevaBala = {

@@ -81,7 +81,7 @@ function render() {
   // Dibuja el fondo en el lienzo
   context.fillStyle = fondo.color; // Configura el color de fondo
   context.fillRect(0, 0, WIDTH, HEIGHT); // Dibuja un rectángulo de fondo que cubre todo el lienzo
-
+  drawWall();
   // Dibuja las balas
   for (let i = 0; i < balas.length; i++) {
     const balaActual = balas[i];
@@ -109,3 +109,77 @@ wallpaper.onload = function () {
 let countdownInterval = setInterval(function() {
   countdown(secondsElement);
 }, 1000);
+
+
+
+function drawWall(){
+  //linea arriba izquierda
+context.beginPath();
+context.moveTo(150, 100);
+context.lineTo(150, 200);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+//linea arriba derecha
+context.beginPath();
+context.moveTo(500, 100);
+context.lineTo(500, 200);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+//linea abajo izquierda
+context.beginPath();
+context.moveTo(150, 400);
+context.lineTo(150, 300);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+//linea abajo derecha
+context.beginPath();
+context.moveTo(500, 400);
+context.lineTo(500, 300);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+//T arriba
+context.beginPath();
+context.moveTo(325, 100);
+context.lineTo(325, 200);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.moveTo(250, 200);
+context.lineTo(400, 200);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+//T abajo
+context.beginPath();
+context.moveTo(325, 400);
+context.lineTo(325, 300);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.moveTo(250, 300);
+context.lineTo(400, 300);
+context.strokeStyle = "blue";
+context.lineWidth = 2;
+context.stroke();
+context.closePath();
+}
