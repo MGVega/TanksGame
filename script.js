@@ -41,7 +41,7 @@ export const player2 = {
 export const bala = {
   width: 10,
   height: 10,
-  speed: 5,
+  speed: 15,
   color: "red",
 };
 
@@ -54,12 +54,18 @@ function update() {
 
   for (let i = 0; i < balas.length; i++) {
     const balaActual = balas[i];
-    if(player1.direccion="u") {
+    if(balaActual.direccion == "u") {
       balaActual.y -= bala.speed;
     }
-    
-
-    console.log("Dibujando bala en x: " + balaActual.x + ", y: " + balaActual.y); 
+    if(balaActual.direccion == "d") {
+      balaActual.y += bala.speed;
+    }
+    if(balaActual.direccion == "l") {
+      balaActual.x -= bala.speed;
+    }
+    if(balaActual.direccion == "r") {
+      balaActual.x += bala.speed;
+    }
 
     context.fillStyle = bala.color;
     context.fillRect(balaActual.x, balaActual.y, bala.width, bala.height); 

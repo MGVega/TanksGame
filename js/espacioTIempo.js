@@ -16,7 +16,6 @@ export function espacioTiempo(event) {
 
   if (isLeft && player1.x > X_IZQUIERDA) {
     player1.direccion= "l";
-    console.log(player1.direccion);
     player1.x -= player1.speed * FACTOR;
     player1.url = "./images/1izquierda.png";
   }
@@ -61,7 +60,8 @@ export function espacioTiempo(event) {
 
       const nuevaBala = {
         x: player1.x + (player1.width / 2) - (bala.width / 2), 
-        y: player1.y,
+        y: player1.y + (player1.width / 2) - (bala.width / 2),
+        direccion: player1.direccion
       };
   
       balas.push(nuevaBala); 
