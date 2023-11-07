@@ -14,13 +14,89 @@ export function espacioTiempo(event) {
   let isUp2 = event.key.toLowerCase() === "w";
   let isDown2 = event.key.toLowerCase() === "s";
 
+
+  //PLAYER 1
   if (
+    //Muro arriba derecha
     !(
-        (isLeft && player1.x > 150 && player1.x < 250 && player1.y > 100 && player1.y < 200) ||
-        (isRight && player1.x > 500 && player1.x < 600 && player1.y > 100 && player1.y < 200) ||
-        (isUp && player1.x > 250 && player1.x < 400 && player1.y > 200 && player1.y < 300) ||
-        (isDown && player1.x > 150 && player1.x < 250 && player1.y > 300 && player1.y < 400)
-    ) 
+        (isLeft && player1.x == 490 && player1.y == 50) ||
+        (isLeft && player1.x == 490 && player1.y == 90) ||
+        (isLeft && player1.x == 490 && player1.y == 130) ||
+        (isRight && player1.x == 410 && player1.y == 50) ||
+        (isRight && player1.x == 410 && player1.y == 90) ||
+        (isRight && player1.x == 410 && player1.y == 130) ||
+        (isDown && player1.x == 450 && player1.y == 10) ||
+        (isUp && player1.x == 450 && player1.y == 170)
+    ) && 
+    //Muro abajo derecha
+    !(
+      (isLeft && player1.x == 490 && player1.y == 250) ||
+      (isLeft && player1.x == 490 && player1.y == 290) ||
+      (isLeft && player1.x == 490 && player1.y == 330) ||
+      (isRight && player1.x == 410 && player1.y == 250) ||
+      (isRight && player1.x == 410 && player1.y == 290) ||
+      (isRight && player1.x == 410 && player1.y == 330) ||
+      (isDown && player1.x == 450 && player1.y == 210) ||
+      (isUp && player1.x == 450 && player1.y == 370)
+    )&&
+    //Muro arriba izquierda
+    !(
+      (isLeft && player1.x == 130 && player1.y == 50) ||
+      (isLeft && player1.x == 130 && player1.y == 90) ||
+      (isLeft && player1.x == 130 && player1.y == 130) ||
+      (isRight && player1.x == 50 && player1.y == 50) ||
+      (isRight && player1.x == 50 && player1.y == 90) ||
+      (isRight && player1.x == 50 && player1.y == 130) ||
+      (isDown && player1.x == 90 && player1.y == 10) ||
+      (isUp && player1.x == 90 && player1.y == 170)
+    )&&
+    //Muro abajo izquierda
+    !(
+      (isLeft && player1.x == 130 && player1.y == 250) ||
+      (isLeft && player1.x == 130 && player1.y == 290) ||
+      (isLeft && player1.x == 130 && player1.y == 330) ||
+      (isRight && player1.x == 50 && player1.y == 250) ||
+      (isRight && player1.x == 50 && player1.y == 290) ||
+      (isRight && player1.x == 50 && player1.y == 330) ||
+      (isDown && player1.x == 90 && player1.y == 210) ||
+      (isUp && player1.x == 90 && player1.y == 370)
+    )&&
+    //Muro arriba centro
+    !(
+      (isLeft && player1.x == 290 && player1.y == 90) ||
+      (isLeft && player1.x == 290 && player1.y == 130) ||
+
+      (isRight && player1.x == 250 && player1.y == 90) ||
+      (isRight && player1.x == 250 && player1.y == 130) ||
+      
+      (isDown && player1.x == 330 && player1.y == 130) ||
+      (isDown && player1.x == 290 && player1.y == 130) ||
+      (isDown && player1.x == 250 && player1.y == 130) ||
+      (isDown && player1.x == 210 && player1.y == 130) ||
+      
+      (isUp && player1.x == 210 && player1.y == 170) ||
+      (isUp && player1.x == 250 && player1.y == 170) ||
+      (isUp && player1.x == 290 && player1.y == 170) ||
+      (isUp && player1.x == 330 && player1.y == 170)
+    )&&
+    //Muro abajo centro
+    !(
+      (isLeft && player1.x == 290 && player1.y == 250) ||
+      (isLeft && player1.x == 290 && player1.y == 290) ||
+
+      (isRight && player1.x == 250 && player1.y == 250) ||
+      (isRight && player1.x == 250 && player1.y == 290) ||
+      
+      (isDown && player1.x == 330 && player1.y == 210) ||
+      (isDown && player1.x == 290 && player1.y == 210) ||
+      (isDown && player1.x == 250 && player1.y == 210) ||
+      (isDown && player1.x == 210 && player1.y == 210) ||
+      
+      (isUp && player1.x == 210 && player1.y == 250) ||
+      (isUp && player1.x == 250 && player1.y == 250) ||
+      (isUp && player1.x == 290 && player1.y == 250) ||
+      (isUp && player1.x == 330 && player1.y == 250)
+    )
 ) {
   if (isLeft && player1.x > X_IZQUIERDA ) {
     player1.direccion= "l";
@@ -42,7 +118,92 @@ export function espacioTiempo(event) {
     player1.y += player1.speed * FACTOR;
     player1.url = "./images/1abajo.png";
   }
-  
+}
+
+
+// PLAYER 2
+if (
+  //Muro arriba derecha
+  !(
+      (isLeft2 && player2.x == 490 && player2.y == 50) ||
+      (isLeft2 && player2.x == 490 && player2.y == 90) ||
+      (isLeft2 && player2.x == 490 && player2.y == 130) ||
+      (isRight2 && player2.x == 410 && player2.y == 50) ||
+      (isRight2 && player2.x == 410 && player2.y == 90) ||
+      (isRight2 && player2.x == 410 && player2.y == 130) ||
+      (isDown2 && player2.x == 450 && player2.y == 10) ||
+      (isUp2 && player2.x == 450 && player2.y == 170)
+  ) && 
+  //Muro abajo derecha
+  !(
+    (isLeft2 && player2.x == 490 && player2.y == 250) ||
+    (isLeft2 && player2.x == 490 && player2.y == 290) ||
+    (isLeft2 && player2.x == 490 && player2.y == 330) ||
+    (isRight2 && player2.x == 410 && player2.y == 250) ||
+    (isRight2 && player2.x == 410 && player2.y == 290) ||
+    (isRight2 && player2.x == 410 && player2.y == 330) ||
+    (isDown2 && player2.x == 450 && player2.y == 210) ||
+    (isUp2 && player2.x == 450 && player2.y == 370)
+  )&&
+  //Muro arriba izquierda
+  !(
+    (isLeft2 && player2.x == 130 && player2.y == 50) ||
+    (isLeft2 && player2.x == 130 && player2.y == 90) ||
+    (isLeft2 && player2.x == 130 && player2.y == 130) ||
+    (isRight2 && player2.x == 50 && player2.y == 50) ||
+    (isRight2 && player2.x == 50 && player2.y == 90) ||
+    (isRight2 && player2.x == 50 && player2.y == 130) ||
+    (isDown2 && player2.x == 90 && player2.y == 10) ||
+    (isUp2 && player2.x == 90 && player2.y == 170)
+  )&&
+  //Muro abajo izquierda
+  !(
+    (isLeft2 && player2.x == 130 && player2.y == 250) ||
+    (isLeft2 && player2.x == 130 && player2.y == 290) ||
+    (isLeft2 && player2.x == 130 && player2.y == 330) ||
+    (isRight2 && player2.x == 50 && player2.y == 250) ||
+    (isRight2 && player2.x == 50 && player2.y == 290) ||
+    (isRight2 && player2.x == 50 && player2.y == 330) ||
+    (isDown2 && player2.x == 90 && player2.y == 210) ||
+    (isUp2 && player2.x == 90 && player2.y == 370)
+  )&&
+  //Muro arriba centro
+  !(
+    (isLeft2 && player2.x == 290 && player2.y == 90) ||
+    (isLeft2 && player2.x == 290 && player2.y == 130) ||
+
+    (isRight2 && player2.x == 250 && player2.y == 90) ||
+    (isRight2 && player2.x == 250 && player2.y == 130) ||
+    
+    (isDown2 && player2.x == 330 && player2.y == 130) ||
+    (isDown2 && player2.x == 290 && player2.y == 130) ||
+    (isDown2 && player2.x == 250 && player2.y == 130) ||
+    (isDown2 && player2.x == 210 && player2.y == 130) ||
+    
+    (isUp2 && player2.x == 210 && player2.y == 170) ||
+    (isUp2 && player2.x == 250 && player2.y == 170) ||
+    (isUp2 && player2.x == 290 && player2.y == 170) ||
+    (isUp2 && player2.x == 330 && player2.y == 170)
+  )&&
+  //Muro abajo centro
+  !(
+    (isLeft2 && player2.x == 290 && player2.y == 250) ||
+    (isLeft2 && player2.x == 290 && player2.y == 290) ||
+
+    (isRight2 && player2.x == 250 && player2.y == 250) ||
+    (isRight2 && player2.x == 250 && player2.y == 290) ||
+    
+    (isDown2 && player2.x == 330 && player2.y == 210) ||
+    (isDown2 && player2.x == 290 && player2.y == 210) ||
+    (isDown2 && player2.x == 250 && player2.y == 210) ||
+    (isDown2 && player2.x == 210 && player2.y == 210) ||
+    
+    (isUp2 && player2.x == 210 && player2.y == 250) ||
+    (isUp2 && player2.x == 250 && player2.y == 250) ||
+    (isUp2 && player2.x == 290 && player2.y == 250) ||
+    (isUp2 && player2.x == 330 && player2.y == 250)
+  )
+) {
   if (isLeft2 && player2.x > X_IZQUIERDA) {
     player2.direccion="l";
     player2.x -= player2.speed * FACTOR;
@@ -63,6 +224,10 @@ export function espacioTiempo(event) {
     player2.y += player2.speed * FACTOR;
     player2.url = "./images/2abajo.png";
   }
+  console.log("--");
+  console.log("x2:" + player2.x);
+  console.log("y2:" + player2.y);
+
 }
     if ((event.key === "Control") && player1) {
 
