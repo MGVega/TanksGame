@@ -3,7 +3,7 @@ import { WIDTH, HEIGHT, FACTOR, X_IZQUIERDA, X_DERECHA, Y_ARRIBA, Y_ABAJO } from
 import { player1, player2, bala, balas } from "../script.js";
 
 export function espacioTiempo(event) {
-  console.log("Tecla presionada: " + event.key);
+ 
   let isLeft = event.key === "ArrowLeft";
   let isRight = event.key === "ArrowRight";
   let isUp = event.key === "ArrowUp";
@@ -15,35 +15,44 @@ export function espacioTiempo(event) {
   let isDown2 = event.key.toLowerCase() === "s";
 
   if (isLeft && player1.x > X_IZQUIERDA) {
+    player1.direccion= "l";
+    console.log(player1.direccion);
     player1.x -= player1.speed * FACTOR;
     player1.url = "./images/1izquierda.png";
   }
   if (isRight &&  player1.x < X_DERECHA - 100) {
+    player1.direccion="r";
     player1.x += player1.speed * FACTOR;
     player1.url = "./images/1derecha.png";
   }
   if (isUp && player1.y > Y_ARRIBA) {
+    player1.direccion="u";
     player1.y -= player1.speed * FACTOR;
     player1.url = "./images/1arriba.png";
   }
   if (isDown && player1.y < Y_ABAJO - 100) {
+    player1.direccion="d";
     player1.y += player1.speed * FACTOR;
     player1.url = "./images/1abajo.png";
   }
   
   if (isLeft2 && player2.x > X_IZQUIERDA) {
+    player2.direccion="l";
     player2.x -= player2.speed * FACTOR;
     player2.url = "./images/2izquierda.png";
   }
   if (isRight2 && player2.x < X_DERECHA - 100) {
+    player2.direccion="r";
     player2.x += player2.speed * FACTOR;
     player2.url = "./images/2derecha.png";
   }
   if (isUp2 && player2.y > Y_ARRIBA) {
+    player2.direccion="u";
     player2.y -= player2.speed * FACTOR;
     player2.url = "./images/2arriba.png";
   }
   if (isDown2 && player2.y < Y_ABAJO - 100) {
+    player2.direccion="d";
     player2.y += player2.speed * FACTOR;
     player2.url = "./images/2abajo.png";
   }

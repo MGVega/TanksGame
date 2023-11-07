@@ -24,7 +24,8 @@ export const player1 = {
   x: (WIDTH / 2) - (-210),
   y: HEIGHT - 470,
   width: 100,
-  speed: 200
+  speed: 200,
+  direccion:"d"
 };
 
 export const player2 = {
@@ -32,7 +33,8 @@ export const player2 = {
   x: (WIDTH / 2) - 310,
   y: HEIGHT - 110,
   width: 100,
-  speed: 200
+  speed: 200,
+  direccion:"u"
 };
 
 
@@ -52,8 +54,10 @@ function update() {
 
   for (let i = 0; i < balas.length; i++) {
     const balaActual = balas[i];
-
-    balaActual.y -= bala.speed;
+    if(player1.direccion="u") {
+      balaActual.y -= bala.speed;
+    }
+    
 
     console.log("Dibujando bala en x: " + balaActual.x + ", y: " + balaActual.y); 
 
