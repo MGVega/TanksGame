@@ -1,6 +1,6 @@
 
 import { WIDTH, HEIGHT, FACTOR, X_IZQUIERDA, X_DERECHA, Y_ARRIBA, Y_ABAJO } from "../modules/constants.js";
-import { player1, player2, bala, balas } from "../script.js";
+import { player1, player2, bala, balas1, balas2 } from "../script.js";
 
 export function espacioTiempo(event) {
  
@@ -229,15 +229,38 @@ if (
   console.log("y2:" + player2.y);
 
 }
-    if ((event.key === "Control") && player1) {
+if ((event.key === "z") && player1) {
 
-      const nuevaBala = {
-        x: player1.x + (player1.width / 2) - (bala.width / 2), 
-        y: player1.y + (player1.width / 2) - (bala.width / 2),
-        direccion: player1.direccion
-      };
-  
-      balas.push(nuevaBala); 
-    }
+  balas1.pop();
+};
+
+if ((event.key === "z") && player2) {
+
+balas2.pop();
+};
+
+
+
+if ((event.key === "*") && player1) {
+
+  const nuevaBala = {
+    x: player1.x + (player1.width / 2) - (bala.width / 2), 
+    y: player1.y + (player1.width / 2) - (bala.width / 2),
+    direccion: player1.direccion
+  };
+
+  balas1.push(nuevaBala); 
+}
+
+if ((event.key === "v") && player2) {
+
+  const nuevaBala = {
+    x: player2.x + (player2.width / 2) - (bala.width / 2), 
+    y: player2.y + (player2.width / 2) - (bala.width / 2),
+    direccion: player2.direccion
+  };
+
+  balas2.push(nuevaBala); 
+}
   
 }

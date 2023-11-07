@@ -45,15 +45,16 @@ export const bala = {
   color: "red",
 };
 
-export const balas = [];
+export const balas1 = [];
+export const balas2 = [];
 
 
 function update() {
   requestAnimationFrame(render);
   requestAnimationFrame(update);
 
-  for (let i = 0; i < balas.length; i++) {
-    const balaActual = balas[i];
+  for (let i = 0; i < balas1.length; i++) {
+    const balaActual = balas1[i];
     if(balaActual.direccion == "u") {
       balaActual.y -= bala.speed;
     }
@@ -71,7 +72,31 @@ function update() {
     context.fillRect(balaActual.x, balaActual.y, bala.width, bala.height); 
     
     if (balaActual.y < 0) {
-      balas.splice(i, 1); 
+      balas1.splice(i, 1); 
+      i--;
+    }
+  }
+
+  for (let i = 0; i < balas2.length; i++) {
+    const balaActual = balas2[i];
+    if(balaActual.direccion == "u") {
+      balaActual.y -= bala.speed;
+    }
+    if(balaActual.direccion == "d") {
+      balaActual.y += bala.speed;
+    }
+    if(balaActual.direccion == "l") {
+      balaActual.x -= bala.speed;
+    }
+    if(balaActual.direccion == "r") {
+      balaActual.x += bala.speed;
+    }
+
+    context.fillStyle = bala.color;
+    context.fillRect(balaActual.x, balaActual.y, bala.width, bala.height); 
+    
+    if (balaActual.y < 0) {
+      balas2.splice(i, 1); 
       i--;
     }
   }
@@ -83,8 +108,14 @@ function render() {
   context.fillRect(0, 0, WIDTH, HEIGHT); // Dibuja un rectángulo de fondo que cubre todo el lienzo
   drawWall();
   // Dibuja las balas
-  for (let i = 0; i < balas.length; i++) {
-    const balaActual = balas[i];
+  for (let i = 0; i < balas1.length; i++) {
+    const balaActual = balas1[i];
+
+    context.fillStyle = bala.color;
+    context.fillRect(balaActual.x, balaActual.y, bala.width, bala.height);
+  }
+  for (let i = 0; i < balas2.length; i++) {
+    const balaActual = balas2[i];
 
     context.fillStyle = bala.color;
     context.fillRect(balaActual.x, balaActual.y, bala.width, bala.height);
