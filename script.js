@@ -28,7 +28,7 @@ let context = myCanvas.getContext("2d");
 // Ejemplo movimiento jugador
 
 export const fondo = {
-  color: "#fff",
+  color: "#000",
 }
 
 export const player1 = {
@@ -144,13 +144,14 @@ function detectarColisiones() {
     const bala = balas1[i];
     for (let j = 0; j < lineas.length; j++) {
       const linea = lineas[j];
-      const margen = 5; // Valor ficticio para aumentar el área de colisión
+      const margenX = bala.width / 2; // Margen basado en el ancho de la bala
+      const margenY = bala.height / 2; // Margen basado en la altura de la bala
 
       if (
-        bala.x + margen >= linea.x1 &&
-        bala.x - margen <= linea.x2 &&
-        bala.y + margen >= linea.y1 &&
-        bala.y - margen <= linea.y2
+        bala.x >= linea.x1 &&
+        bala.x <= linea.x2 &&
+        bala.y >= linea.y1 &&
+        bala.y <= linea.y2
       ) {
         // Colisión detectada, elimina la bala
         balas1.splice(i, 1);
@@ -226,7 +227,7 @@ context.beginPath();
 context.moveTo(150, 100);
 context.lineTo(150, 200);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -235,7 +236,7 @@ context.beginPath();
 context.moveTo(500, 100);
 context.lineTo(500, 200);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -244,7 +245,7 @@ context.beginPath();
 context.moveTo(150, 380);
 context.lineTo(150, 280);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -253,7 +254,7 @@ context.beginPath();
 context.moveTo(500, 380);
 context.lineTo(500, 280);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -262,7 +263,7 @@ context.beginPath();
 context.moveTo(325, 120);
 context.lineTo(325, 200);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -270,7 +271,7 @@ context.beginPath();
 context.moveTo(250, 200);
 context.lineTo(400, 200);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -279,7 +280,7 @@ context.beginPath();
 context.moveTo(325, 280);
 context.lineTo(325, 360);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 
@@ -287,7 +288,7 @@ context.beginPath();
 context.moveTo(250, 280);
 context.lineTo(400, 280);
 context.strokeStyle = "blue";
-context.lineWidth = 2;
+context.lineWidth = 3;
 context.stroke();
 context.closePath();
 }

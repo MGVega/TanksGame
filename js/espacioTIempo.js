@@ -224,9 +224,6 @@ if (
     player2.y += player2.speed * FACTOR;
     player2.url = "./images/2abajo.png";
   }
-  console.log("--");
-  console.log("x2:" + player2.x);
-  console.log("y2:" + player2.y);
 
 }
 if ((event.key === "z") && player1) {
