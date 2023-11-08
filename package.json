@@ -6,6 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Elías",
+  "author": "Víctor Silva Matamoros, Mario González Vega, Alberto González Obreo, Abdón Hernández Perera",
   "license": "ISC"
 }
