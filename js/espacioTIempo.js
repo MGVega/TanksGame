@@ -241,8 +241,8 @@ balas2.pop();
 if ((event.key === "*") && player1) {
 
   const nuevaBala = {
-    x: player1.x + (player1.width / 2) - (bala.width / 2), 
-    y: player1.y + (player1.width / 2) - (bala.width / 2),
+    x: player1.x + (player1.width *5) - (bala.width / 2), 
+    y: player1.y + (player1.width *5) - (bala.width / 2),
     direccion: player1.direccion
   };
 
@@ -252,8 +252,8 @@ if ((event.key === "*") && player1) {
 if ((event.key === "v") && player2) {
 
   const nuevaBala = {
-    x: player2.x + (player2.width / 2) - (bala.width / 2), 
-    y: player2.y + (player2.width / 2) - (bala.width / 2),
+    x: player2.x + (player2.width *5) - (bala.width / 2), 
+    y: player2.y + (player2.width *5) - (bala.width / 2),
     direccion: player2.direccion
   };
 

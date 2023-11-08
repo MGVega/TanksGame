@@ -35,7 +35,7 @@ export const player1 = {
   url: "./images/1abajo.png",
   x: (WIDTH / 2) - (-210),
   y: HEIGHT - 470,
-  width: 100,
+  width: 10,
   speed: 200,
   direccion:"d"
 };
@@ -44,7 +44,7 @@ export const player2 = {
   url: "./images/2arriba.png",
   x: (WIDTH / 2) - 310,
   y: HEIGHT - 110,
-  width: 100,
+  width: 10,
   speed: 200,
   direccion:"u"
 };
@@ -159,10 +159,10 @@ function detectarColisiones() {
         break; // Sal del bucle de líneas, ya que la bala ha colisionado
       }
     }
-    if(bala.x >= player2.x &&
-      bala.x <= (player2.x + player2.width) &&
-      bala.y >= player2.y &&
-      bala.y <= player2.y + player2.width
+    if(bala.x >= player2.x+40 &&
+      bala.x <= (player2.x+60 + player2.width) &&
+      bala.y >= player2.y+40 &&
+      bala.y <= player2.y+60 + player2.width
        ){
         balas1.pop();
         perderVida("j2", popup);
@@ -190,10 +190,10 @@ function detectarColisiones2() {
         break; // Sal del bucle de líneas, ya que la bala ha colisionado
       }
     }
-    if(bala.x >= player1.x &&
-      bala.x <= (player1.x + player1.width) &&
-      bala.y >= player1.y &&
-      bala.y <= player1.y + player1.width
+    if(bala.x >= player1.x+40 &&
+      bala.x <= (player1.x+60 + player1.width) &&
+      bala.y >= player1.y+40 &&
+      bala.y <= player1.y+60 + player1.width
        ){
         balas2.pop();
         perderVida("j1", popup);
