@@ -14,13 +14,15 @@ body{
   justify-content: center;
 }
 
-#myCanvas{
+#myCanvas {
   background-color: red;
-  border:1px solid red;
+  border: 3px solid rgb(7, 7, 7);
+  animation: neon 2s linear infinite;
 }
 
+
 #contador{
-  background-color: rgb(75, 72, 72);
+  background-color: rgb(24, 23, 23);
   display: flex;
 }
 
@@ -58,3 +60,20 @@ body{
     box-shadow: 0 0 5px #8A2BE2, 0 0 20px #8A2BE2, 0 0 30px #8A2BE2;
   }
 }
+
+
+
+@keyframes neon {
+  0% {
+    box-shadow: 0 0 5px #8A2BE2, 0 0 20px #8A2BE2, 0 0 30px #8A2BE2;
+  }
+  50% {
+    box-shadow: 0 0 10px #8A2BE2, 0 0 40px #1E90FF, 0 0 60px #1E90FF;
+  }
+  100% {
+    box-shadow: 0 0 5px #8A2BE2, 0 0 20px #8A2BE2, 0 0 30px #8A2BE2;
+  }
+}
+
+
+
