@@ -115,11 +115,11 @@ function update() {
 }
 function render() {
   clearRect(context);
-  // Dibuja el fondo en el lienzo
-  context.fillStyle = fondo.color; // Configura el color de fondo
-  context.fillRect(0, 0, WIDTH, HEIGHT); // Dibuja un rectángulo de fondo que cubre todo el lienzo
+
+  context.fillStyle = fondo.color; 
+  context.fillRect(0, 0, WIDTH, HEIGHT); 
   drawWall();
-  // Dibuja las balas
+
   for (let i = 0; i < balas1.length; i++) {
     const balaActual = balas1[i];
 
